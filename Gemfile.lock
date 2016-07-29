@@ -114,7 +114,7 @@ PLATFORMS
 
 DEPENDENCIES
   expat!
-  sqlite3
+  sqlite3 (~> 1.3.0)
 
 BUNDLED WITH
    1.12.5
