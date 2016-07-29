@@ -1,5 +1,8 @@
 ---
 en:
   hello: Hello world
-  activerecord.attributes.post.title: Title
-  activerecord.attributes.post.content: Content
+  activerecord:
+    attributes:
+      post:
+        title: Title
+        content: Content

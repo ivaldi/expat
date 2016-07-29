@@ -36,9 +36,13 @@ module Expat
 
     def load_translations
       @locale = params[:locale_id]
-      path = "#{Rails.root}/config/locales/#{@locale}.yml"
+      @translations = load_translation @locale
+    end
+
+    def load_translation locale
+      path = "#{Rails.root}/config/locales/#{locale}.yml"
       yml = YAML.load_file path
-      @translations = iterate yml[@locale], ''
+      iterate yml[locale], ''
     end
 
     def save_translations
