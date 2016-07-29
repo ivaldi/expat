@@ -15,10 +15,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Security
 
-## Expat 0.1.1
+## Expat 0.1.1 (2016-07-29)
 ### Added
-- Addition and removal of translations
+- Some simple styling on table.
 
-## Expat 0.1.0
+## Expat 0.1.1 (2016-07-29)
 ### Added
-- Initial editing of yml translation
+- Addition and removal of translations.
+
+## Expat 0.1.0 (2016-07-29)
+### Added
+- Initial editing of yml translation.

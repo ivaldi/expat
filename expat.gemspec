@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'expat'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.authors     = ['Frank Groeneveld']
   s.email       = ['frank@ivaldi.nl']
   s.homepage    = 'https://github.com/ivaldi/expat/'
