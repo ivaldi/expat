@@ -1,7 +1,9 @@
+---
 nl:
-  hello: Hallo wereld
+  hello: Hallo sem
   activerecord:
     attributes:
       post:
         title: Titel
         content: Inhoud
+  hallo: wereld

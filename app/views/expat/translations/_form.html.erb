@@ -1,5 +1,24 @@
-<%= form_tag locale_translation_path, method: :patch do |f| %>
-  <%= label_tag :value, params[:id] %>
-  <%= text_field_tag :value, @translation %>
+<%
+  if @translation.nil?
+    url = locale_translations_path
+    method = :post
+  else
+    url = locale_translation_path
+    method = :patch
+  end
+%>
+<%= form_tag url, method: method do |f| %>
+
+  <% if @translation.nil? %>
+    <%= label_tag :key %>
+    <%= text_field_tag :key %><br />
+
+    <%= label_tag :value%>
+    <%= text_field_tag :value %><br />
+  <% else %>
+    <%= label_tag :value, params[:id] %>
+    <%= text_field_tag :value, @translation %><br />
+  <% end %>
+
   <input type="submit" value="save" />
 <% end %>

@@ -13,8 +13,23 @@ module Expat
 
     def update
       @translations[params[:id]] = params[:value]
-      redirect_to locale_translations_path(@locale)
       save_translations
+      redirect_to locale_translations_path(@locale)
+    end
+
+    def new
+    end
+
+    def create
+      @translations[params[:key]] = params[:value]
+      save_translations
+      redirect_to locale_translations_path(@locale)
+    end
+
+    def destroy
+      @translations.delete params[:id]
+      save_translations
+      redirect_to locale_translations_path(@locale)
     end
 
     protected

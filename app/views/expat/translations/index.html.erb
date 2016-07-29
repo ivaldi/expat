@@ -1,3 +1,5 @@
+<%= link_to 'new', new_locale_translation_path(locale_id: @locale) %>
+
 <table>
   <% @translations.each do |key, value| %>
     <tr>
@@ -7,6 +9,12 @@
       <td>
         <%= link_to value, edit_locale_translation_path(
             locale_id: @locale, id: key) %>
+      </td>
+      <td>
+        <%= form_tag locale_translation_path(locale_id: @locale, id: key),
+            method: :delete %>
+          <input type="submit" value="remove" />
+        </form>
       </td>
     </tr>
   <% end %>
