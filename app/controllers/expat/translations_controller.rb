@@ -28,7 +28,29 @@ module Expat
 
     def save_translations
       path = "#{Rails.root}/config/locales/#{@locale}.yml"
-      File.write path, { @locale => @translations }.to_yaml
+      result = {}
+
+      @translations.each do |key, value|
+        key_parts = key.split('.')
+
+        current = result
+        last_key = nil
+        level = 0
+        key_parts.each do |part|
+          unless current[part].present?
+            current[part] = {}
+          end
+          if level < key_parts.count - 1
+            current = current[part]
+          else
+            last_key = part
+          end
+          level += 1
+        end
+        current[last_key] = value
+      end
+
+      File.write path, { @locale => result }.to_yaml
     end
 
     def iterate node, parent, result = {}
