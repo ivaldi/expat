@@ -5,7 +5,8 @@
         <%= key %>
       </td>
       <td>
-        <%= value %>
+        <%= link_to value, edit_locale_translation_path(
+            locale_id: @locale, id: key) %>
       </td>
     </tr>
   <% end %>

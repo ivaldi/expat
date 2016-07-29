@@ -1,0 +1,5 @@
+<%= form_tag locale_translation_path, method: :patch do |f| %>
+  <%= label_tag :value, params[:id] %>
+  <%= text_field_tag :value, @translation %>
+  <input type="submit" value="save" />
+<% end %>
