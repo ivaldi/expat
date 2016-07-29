@@ -1,2 +1,7 @@
 nl:
   hello: Hallo wereld
+  activerecord:
+    attributes:
+      post:
+        title: Titel
+        content: Inhoud
