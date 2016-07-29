@@ -21,3 +21,8 @@ table {
 td {
   border: 1px solid #ccc;
 }
+
+.translation_missing {
+  background: #f00;
+  color: #fff;
+}

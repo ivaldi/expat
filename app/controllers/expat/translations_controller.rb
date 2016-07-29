@@ -5,6 +5,7 @@ module Expat
     before_action :load_translations
 
     def index
+      @translations = append_missing_translations @locale, @translations
     end
 
     def edit
@@ -43,6 +44,21 @@ module Expat
       path = "#{Rails.root}/config/locales/#{locale}.yml"
       yml = YAML.load_file path
       iterate yml[locale], ''
+    end
+
+    def append_missing_translations current, current_translations
+      result = {}
+
+      list_locales.each do |locale|
+        next if current == locale
+
+        translation = load_translation locale
+        (current_translations.keys | translation.keys).each do |key|
+          result[key] = current_translations[key]
+        end
+      end
+
+      result
     end
 
     def save_translations

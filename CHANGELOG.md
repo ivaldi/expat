@@ -15,7 +15,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Security
 
-## Expat 0.1.1 (2016-07-29)
+## Expat 0.1.3 (2016-07-29)
+### Added
+- Missing translation detection.
+
+## Expat 0.1.2 (2016-07-29)
 ### Added
 - Some simple styling on table.
 

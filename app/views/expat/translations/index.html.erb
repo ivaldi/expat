@@ -7,8 +7,13 @@
         <%= key %>
       </td>
       <td>
-        <%= link_to value, edit_locale_translation_path(
-            locale_id: @locale, id: key) %>
+        <%= link_to edit_locale_translation_path(
+            locale_id: @locale, id: key) do %>
+          <%= value %>
+          <% if value.blank? %>
+            <span class="translation_missing">missing</span>
+          <% end %>
+        <% end %>
       </td>
       <td>
         <%= form_tag locale_translation_path(locale_id: @locale, id: key),

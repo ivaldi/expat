@@ -1,5 +1,5 @@
 <%
-  if @translation.nil?
+  unless params[:id].present?
     url = locale_translations_path
     method = :post
   else
@@ -9,7 +9,7 @@
 %>
 <%= form_tag url, method: method do |f| %>
 
-  <% if @translation.nil? %>
+  <% unless params[:id].present? %>
     <%= label_tag :key %>
     <%= text_field_tag :key %><br />
 
