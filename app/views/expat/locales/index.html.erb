@@ -1,5 +1,5 @@
 <ul>
   <% @locales.each do |locale| %>
-    <li><%= link_to locale.upcase, '#' %></li>
+    <li><%= link_to locale.upcase, locale_translations_path(locale) %></li>
   <% end %>
 </ul>

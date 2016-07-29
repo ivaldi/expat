@@ -1,4 +1,4 @@
-require_dependency "expat/application_controller"
+require_dependency 'expat/application_controller'
 
 module Expat
   class LocalesController < ApplicationController
