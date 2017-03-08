@@ -15,6 +15,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Security
 
+## Expat 0.1.4 (2017-03-08)
+### Fixed
+- Nil error with some translation files.
+
 ## Expat 0.1.3 (2016-07-29)
 ### Added
 - Missing translation detection.
