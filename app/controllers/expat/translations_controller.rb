@@ -89,11 +89,13 @@ module Expat
     end
 
     def iterate node, parent, result = {}
-      node.each do |k,v|
-        if v.respond_to? :each
-          iterate node[k], "#{parent}#{k}.", result
-        else
-          result["#{parent}#{k}"] = v
+      unless node.nil?
+        node.each do |k,v|
+          if v.respond_to? :each
+            iterate node[k], "#{parent}#{k}.", result
+          else
+            result["#{parent}#{k}"] = v
+          end
         end
       end
 
