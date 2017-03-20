@@ -19,7 +19,7 @@ module Expat
     end
 
     def authenticate_expat_user
-      if respond_to?(:expat_user) && expat_user.nil?
+      if methods.include?(:expat_user) && expat_user.nil?
         render text: 'unauthorized'
       end
     end

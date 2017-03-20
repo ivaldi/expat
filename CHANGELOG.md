@@ -15,6 +15,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Security
 
+## Expat 0.1.6 (2017-03-20)
+### Fixed
+- `expat_user` was never called
+
 ## Expat 0.1.5 (2017-03-20)
 ### Added
 - You can now define an `expat_user` function in your `ApplicationController`
