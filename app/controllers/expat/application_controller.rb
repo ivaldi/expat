@@ -1,6 +1,8 @@
 module Expat
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
     protect_from_forgery with: :exception
+
+    before_action :authenticate_expat_user
 
     protected
 
@@ -14,6 +16,12 @@ module Expat
       end
 
       locales
+    end
+
+    def authenticate_expat_user
+      if respond_to?(:expat_user) && expat_user.nil?
+        render text: 'unauthorized'
+      end
     end
   end
 end
